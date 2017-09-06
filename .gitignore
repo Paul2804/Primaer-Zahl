@@ -1,22 +1,26 @@
-# Compiled class file
-*.class
-
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+import java.lang.Math;
+public class HelloWorld
+{
+  static int kleinsterteiler(int z) {
+    int kt=z;
+    int i=z;
+    while (i>1) {
+      if (z % i ==0)
+        kt=i;
+      i=i-1;
+    }
+      return kt;
+  }
+  
+  static void pfz (int m) {
+    if (m>1) {
+      System.out.print(kleinsterteiler (m) );
+      System.out.print(" ");
+      	pfz (m/kleinsterteiler(m));
+    }
+  }
+  public static void main(String[] args)
+  {
+    pfz (15);
+  }
+}
